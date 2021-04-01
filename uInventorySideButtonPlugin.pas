@@ -10,7 +10,6 @@ type
   TInventorySideBtnPlugin = class(TAutoObject, IAbstractPlugin, IBOPlugin, ISideButtonPlugin)
   private
     {$REGION 'fields'}
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field holds the Description of the plug-in.
     /// </summary>
@@ -22,9 +21,7 @@ type
     ///    in Retail Pro under Workstation Preferences.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     FDescription: AnsiString;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field holds the adapter value given by Retail Pro 9.
     /// </summary>
@@ -35,9 +32,7 @@ type
     ///   and a SQL session for accessing the Retail Pro� tablespace directly.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     FAdapter: IPluginAdapter;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field should be initialized to True and then is only changed by Retail Pro in rare exceptions.
     /// </summary>
@@ -47,18 +42,14 @@ type
     ///  event handler returns an exception to the application.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     FEnabled: WordBool;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field holds the fly-over hint for the side-menu button.
     /// </summary>
     /// <remarks>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     FHint: AnsiString;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field holds the text used to name the action instance.
     /// </summary>
@@ -66,27 +57,21 @@ type
     ///   <para>We're not really sure what "action instance" means or how it is used or what it might affect.</para>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     FLayoutName: AnsiString;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field holds the text displayed on the button face.
     /// </summary>
     /// <remarks>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     FCaption: AnsiString;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field controls whether the button face includes a check mark.
     /// </summary>
     /// <remarks>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     FChecked: Boolean;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field holds the filename (with extension) of the icon (or glyph) used on the button in Retail Pro's side menu.
     /// </summary>
@@ -94,9 +79,7 @@ type
     ///   <para>This is typically a 32x32 .BMP image and is expected to be in the "plugins" folder.</para>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     FPictureFilename: AnsiString;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field holds controls whether the button is available or grayed out.
     /// </summary>
@@ -105,9 +88,7 @@ type
     ///    the application, so the logic within the Get_ButtonEnabled getter must be succinct.</para>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     FButtonEnabled: WordBool;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field holds the Business Object type for which this plug-in interface is associated.
     /// </summary>
@@ -115,18 +96,14 @@ type
     ///   <para>The values (such as btInvoice or btCustomer) are defined in the section of contants for BusinessObjectType enums in Plugins_TLB.</para>
     ///   <para>From IBOPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     FBOType: Integer;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field holds unique identifier for the plug-in as defined in the Type Library for the project.
     /// </summary>
     /// <remarks>
     ///   From IAbstractPlugin.
     /// </remarks>
-    {$ENDREGION}
     FPluginGUID: TGUID;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This field controls, in a limited fashion, the order in which the plug-ins are loaded at the
     ///   time they're activated.
@@ -136,12 +113,10 @@ type
     ///   Typically, ppNormal is used for almost all plug-ins.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     FPluginPriority: PluginPriority;
     {$ENDREGION}
   protected
     {$REGION 'Getters and Setters'}
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This returns the Description of the plug-in.
     /// </summary>
@@ -153,9 +128,7 @@ type
     ///    in Retail Pro under Workstation Preferences.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_Description: PAnsiChar; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   The "getter" function for the plug-in's GUID.
     /// </summary>
@@ -163,9 +136,7 @@ type
     ///   <para>This should never need to be changed.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_GUID: TGUID; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This is called just before the plug-in is unloaded.
     /// </summary>
@@ -173,9 +144,7 @@ type
     ///   <para>Do any memory clean-up here.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     procedure CleanUp; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   The "getter" function for the Adapter field.
     /// </summary>
@@ -183,9 +152,7 @@ type
     ///   <para>This should never need to be changed.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_Adapter: IPluginAdapter; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   The "setter" function for the Adapter field.
     /// </summary>
@@ -193,9 +160,7 @@ type
     ///   <para>This should never need to be changed.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     procedure Set_Adapter(const Value: IPluginAdapter); safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This is called when the plug-in is first loaded.
     /// </summary>
@@ -206,9 +171,7 @@ type
     ///   <para>Do any necessary memory allocation here.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Prepare: WordBool; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   Priority controls, in a limited fashion, the order in which the plug-ins are loaded at the time they're
     ///   activated.
@@ -218,9 +181,7 @@ type
     ///   Typically, ppNormal is used for almost all plug-ins.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_Priority: PluginPriority; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This is the "getter" method for the Enabled property.
     /// </summary>
@@ -230,9 +191,7 @@ type
     ///  event handler returns an exception to the application.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_Enabled: WordBool; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This is the "setter" method for the Enabled property.
     /// </summary>
@@ -242,9 +201,7 @@ type
     ///  event handler returns an exception to the application.</para>
     ///   <para>From IAbstractPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     procedure Set_Enabled(Value: WordBool); safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   The "getter" for the BusinessObjectType property.
     /// </summary>
@@ -257,18 +214,14 @@ type
     ///   <para>There is no corresponding "setter" method--this is a read-only property. A plug-in only hooks up to one interface, established when the plug-in is initialized.</para>
     ///   <para>From IBOPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_BusinessObjectType: Integer; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This returns the text displayed on the button face.
     /// </summary>
     /// <remarks>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_Caption: PAnsiChar; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This returns the filename (with extension) of the icon (or glyph) used on the button in Retail Pro's side menu.
     /// </summary>
@@ -276,9 +229,7 @@ type
     ///   <para>This is typically a 32x32 .BMP image and is expected to be in the "plugins" folder.</para>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_PictureFilename: PAnsiChar; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This controls whether the button is available or grayed out.
     /// </summary>
@@ -287,9 +238,7 @@ type
     ///    the application, so the logic within the Get_ButtonEnabled getter must be succinct.</para>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_ButtonEnabled: WordBool; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   The "getter" function for the UseLayoutManager property.
     /// </summary>
@@ -298,9 +247,7 @@ type
     ///  to a side menu via the layout manager.  This should always be set to <c>True</c>.</para>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_UseLayoutManager: WordBool; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This is the "getter" function for the Checked property of a side button
     /// </summary>
@@ -308,18 +255,14 @@ type
     ///   <para>This controls whether the button face includes a check mark.</para>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_Checked: WordBool; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This is the "getter" function that holds the fly-over hint for the side-menu button.
     /// </summary>
     /// <remarks>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_Hint: PAnsiChar; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This returns the text used to name the action instance.
     /// </summary>
@@ -327,9 +270,7 @@ type
     ///   <para>Seldom used.</para>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function Get_LayoutActionName: PAnsiChar; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This is the meat of the SideButton plug-in interface--the equivalent
     ///   of the OnClick event handler of a TButton control.
@@ -337,9 +278,7 @@ type
     /// <remarks>
     ///   From ISideButtonPlugin.
     /// </remarks>
-    {$ENDREGION}
     function HandleEvent: WordBool; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This tells Retail Pro what capabilities the plug-in supports.
     /// </summary>
@@ -352,9 +291,7 @@ type
     /// <remarks>
     ///   <para>From ISideButtonPlugin.</para>
     /// </remarks>
-    {$ENDREGION}
     function PluginCapability(ACapability: Integer): WordBool; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This function enabled plug-in developers to respond to RPro UI events.
     /// </summary>
@@ -364,21 +301,17 @@ type
     ///   complex; therefore, Retail Pro has tried to provide a flexible mechanism that can respond to a
     ///   variety of events. See the V9 Plug-in Programmers Guide for more information.
     /// </remarks>
-    {$ENDREGION}
     function HandleBOUIEvent(ABOHandle: Integer; AEventType: PAnsiChar; AParameters: OleVariant;
                              var AReturnValues: OleVariant; var AHandled: WordBool): WordBool; safecall;
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This property "getter" method returns a variant array of the specific UI events handled by this plugin.
     /// </summary>
     /// <remarks>
     ///    See the V9 Plug-in Programmer's Guide for more information.
     /// </remarks>
-    {$ENDREGION}
     function Get_BOUIEventsSupported: OleVariant; safecall;
     {$ENDREGION}
   public
-    {$REGION 'XMLDoc'}
     /// <summary>
     ///   This method is used to set the data members used to identify the plug-in.
     /// </summary>
@@ -387,7 +320,6 @@ type
     ///   layer anytime the plug-in is instantiated.  <c>Prepare</c> is called before a plug-in is actually activated
     ///   for use by the UI, and that's where connections can be opened, memory allocated, etc.
     /// </remarks>
-    {$ENDREGION}
     procedure Initialize; override;
   end;
 
@@ -395,18 +327,15 @@ type
 implementation
 
 uses
-  {$IFDEF UseCodeSite} CodeSiteLogging, {$ENDIF}
   SideButtonsTest_TLB;
 
 { TInventorySideBtnPlugin }
 
 procedure TInventorySideBtnPlugin.Initialize;
 begin
-  {$IFDEF UseCodeSite}CodeSite.EnterMethod(Self, 'Initialize');{$ENDIF}
-
   inherited;
 
-  { TODO : setup plug-in properties here }
+  { DONE : setup plug-in properties here }
 
   FEnabled := True;
   FCaption := 'Items Plugin!';
@@ -419,30 +348,20 @@ begin
   FDescription := 'A SideButton on the Inventory screen';
   FLayoutName := 'TestInventorySideButton';
   FChecked := False;
-
-  {$IFDEF UseCodeSite}CodeSite.ExitMethod(Self, 'Initialize');{$ENDIF}
 end;
 
 function TInventorySideBtnPlugin.Prepare: WordBool;
 begin
-  {$IFDEF UseCodeSite}CodeSite.EnterMethod(Self, 'Prepare');{$ENDIF}
-
   Result := True;
-
-  {$IFDEF UseCodeSite}CodeSite.ExitMethod(Self, 'Prepare');{$ENDIF}
 end;
 
 function TInventorySideBtnPlugin.HandleEvent: WORDBOOL;
 begin
-  {$IFDEF UseCodeSite}CodeSite.EnterMethod(Self, 'HandleEvent');{$ENDIF}
+  { DONE : Here's the meat of the side-button plugin }
 
-  { TODO : Here's the meat of the side-button plugin }
-
-  ShowMessage(' hi inventory :-) from Delphi 10.3 Rio ');
+  ShowMessage(' hi inventory :-) from Delphi ');
 
   Result := True;
-
-  {$IFDEF UseCodeSite}CodeSite.ExitMethod(Self, 'HandleEvent');{$ENDIF}
 end;
 
 function TInventorySideBtnPlugin.Get_ButtonEnabled: WordBool;
@@ -468,7 +387,7 @@ begin
   if Length(FCaption) > 0 then
     Result := PAnsiChar(FCaption)
   else
-    Result := '<new button caption>';
+    Result := 'Say "Hi!"';
 end;
 
 function TInventorySideBtnPlugin.Get_Description: PAnsiChar;
@@ -553,12 +472,8 @@ end;
 
 procedure TInventorySideBtnPlugin.CleanUp;
 begin
-  {$IFDEF UseCodeSite}CodeSite.EnterMethod(Self, 'CleanUp');{$ENDIF}
-
   // REQUIRED!
   FAdapter := nil;
-
-  {$IFDEF UseCodeSite}CodeSite.ExitMethod(Self, 'CleanUp');{$ENDIF}
 end;
 
 end.
