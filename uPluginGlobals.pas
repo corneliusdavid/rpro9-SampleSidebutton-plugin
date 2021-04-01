@@ -5,7 +5,7 @@ interface
 uses
   Classes, ComObj, Plugins_TLB,
   // refer to the generic plugin discover unit
-  uPluginDiscover,
+  uRPro9PluginDiscover,
 
   // project specific TLB
   SideButtonsTest_TLB,
